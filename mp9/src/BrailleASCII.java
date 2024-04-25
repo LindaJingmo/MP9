@@ -25,15 +25,15 @@ class BrailleASCII {
         pen.println();
       } // case
       case "unicode" -> {
-        for (int i = 0; i < args[1].length() - 6; i += 6) {
-          int codePoint = Integer.parseInt(BAtable.toUnicode(args[1].substring(i, i + 6)), 16);
-          pen.print(Character.toString(codePoint));
-        } // for
+        for (int i = 0; i < args[1].length(); i += 6) {
+          if (i + 6 <= args[1].length()) {
+              pen.print(Character.toString(Integer.parseInt(BAtable.toUnicode(args[1].substring(i, i + 6)), 16)));
+          }
+        }//for
         pen.println();
       } // case
       default -> System.out.println("Invalid Input");
     } // switch
     pen.close();
   } // main()
-
 } // class BrailleASCII

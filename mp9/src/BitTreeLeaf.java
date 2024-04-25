@@ -1,4 +1,7 @@
-
+/**
+ * Construct Bit Tree Leaf
+ * @author Linda
+ */
 class BitTreeLeaf extends BitTreeNode {
   String value;
 
